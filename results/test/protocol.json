@@ -1,0 +1,69 @@
+{
+  "dataset": "torchvision.datasets.CIFAR10",
+  "split": "test",
+  "n_images": 10000,
+  "class_names": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "training_split_sha256": "ed196ad4967911730b6e8fb52d0270ae3228e7a7ce0ee900b3c87857658a3221",
+  "training_seed": 42,
+  "primary_comparison": [
+    "cnn",
+    "tuned"
+  ],
+  "additional_model": "frozen",
+  "validation_only_ablation": "custom CNN without random crop or horizontal flip",
+  "selection": "lowest validation cross-entropy, earliest epoch on ties",
+  "test_metrics": [
+    "accuracy",
+    "macro_f1"
+  ],
+  "inference_batch_size": 64,
+  "cnn_mean": [
+    0.49183993285334954,
+    0.4825411911934913,
+    0.44681958341843686
+  ],
+  "cnn_std": [
+    0.24705073072319023,
+    0.24354212224302518,
+    0.26169221308322804
+  ],
+  "cnn_preprocessing": "native 32x32, ToTensor, Normalize",
+  "resnet_weights": "IMAGENET1K_V1",
+  "resnet_preprocessing": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+  "torch": "2.14.1+cu130",
+  "torchvision": "0.29.1+cu130",
+  "python": "3.13.16",
+  "device": "Tesla T4",
+  "checkpoints": {
+    "cnn": {
+      "sha256": "79e46c98b86034d1d74f6fa84332858ae76ea4d2b556c7b27389bbd9cdce3c83",
+      "selected_epoch": 10,
+      "validation_accuracy": 0.7044,
+      "validation_loss": 0.840553252029419
+    },
+    "frozen": {
+      "sha256": "b62f43e2311a260601c1081cea694b44cac14ae3087eb60c87980f0d1f5c92db",
+      "selected_epoch": 7,
+      "validation_accuracy": 0.874,
+      "validation_loss": 0.3758787942171097
+    },
+    "tuned": {
+      "sha256": "e9726f9b400626612690797cfe040af0ede55acb4c89abaacf058ad0413519b4",
+      "selected_epoch": 3,
+      "validation_accuracy": 0.9074,
+      "validation_loss": 0.2725335182547569
+    }
+  },
+  "test_predictions_sha256": "e362a0cb735b963c62656d6c74e100798303894aed582be71c54e574fc59e390"
+}

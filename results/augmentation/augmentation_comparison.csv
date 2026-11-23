@@ -1,0 +1,3 @@
+condition,selected_epoch,val_loss,correct,accuracy,macro_f1
+Crop + flip,10,0.840553252029419,3522,0.7044,0.699976750987969
+No augmentation,10,0.8441125360488891,3523,0.7046,0.6987684648387338

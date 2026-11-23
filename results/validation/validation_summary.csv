@@ -1,0 +1,4 @@
+model,split,selected_epoch,n,correct,accuracy,macro_f1,replay_delta_images
+cnn,validation,10,5000,3522,0.7044,0.699976750987969,0
+frozen,validation,7,5000,4370,0.874,0.8738418854628177,0
+tuned,validation,3,5000,4537,0.9074,0.9074388336081801,0

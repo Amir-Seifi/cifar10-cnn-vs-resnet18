@@ -1,0 +1,11 @@
+true_class,corrected,regressed,both_wrong,both_correct,net_gain
+airplane,12,14,41,433,-2
+automobile,15,10,20,455,5
+bird,45,8,40,407,37
+cat,50,8,79,363,42
+deer,28,10,48,414,18
+dog,15,13,61,411,2
+frog,19,3,25,453,16
+horse,25,2,35,438,23
+ship,15,6,18,461,9
+truck,18,1,21,460,17

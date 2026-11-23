@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cifar10-cnn-vs-resnet18"
+version = "1.0.0"
+description = "Training and evaluation of CNN and ResNet18 classifiers on CIFAR-10."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.5",
+    "torchvision>=0.20",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "filelock>=3.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+cifar10-train = "cifar10.train:main"
+cifar10-evaluate = "cifar10.evaluate:main"
+cifar10-paired-errors = "cifar10.paired_errors:main"
+
+[tool.setuptools.packages.find]
+include = ["cifar10", "cifar10.*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
